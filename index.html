@@ -86,38 +86,45 @@
       border-top: 1px solid #4caf50;
     }
 
-    /* Anuncios integrados (en el contenido) */
-    .inline-ad {
+    /* Estilos para los nuevos anuncios */
+    #frame {
       width: 100%;
       max-width: 728px;
-      margin: 25px auto;
-      text-align: center;
-    }
-
-    .ad-unit iframe {
-      width: 100%;
       height: 90px;
-      border: 0;
       margin: 0 auto;
+    }
+    
+    #frame iframe {
+      border: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
       background-color: transparent;
     }
-
-    .ad-label {
+    
+    #frame-link {
       display: block;
-      font-size: 10px;
-      color: #aaa;
+      text-align: right;
+      font-size: 12px;
+      color: #4caf50;
+      text-decoration: none;
       margin-top: 5px;
+    }
+    
+    #frame-link:hover {
+      text-decoration: underline;
     }
 
     @media (max-width: 768px) {
-      .ad-unit iframe {
-        height: 50px;
-      }
       .content {
         padding: 20px;
       }
       h1 {
         font-size: 2em;
+      }
+      #frame {
+        height: 60px;
       }
     }
   </style>
@@ -125,20 +132,18 @@
 <body>
   <!-- Anuncio flotante ARRIBA (fixed) -->
   <div class="floating-ad top">
-    <div class="ad-unit">
+    <div id="frame">
       <iframe data-aa='2392776' src='//acceptable.a-ads.com/2392776'></iframe>
-      <span class="ad-label">Publicidad</span>
+      <a id="frame-link" href="https://aads.com/campaigns/new/?source_id=2392776&source_type=ad_unit&partner=2392776">Advertise here</a>
     </div>
   </div>
 
   <!-- Contenido principal -->
   <div class="content">
     <!-- Anuncio integrado ARRIBA del contenido -->
-    <div class="inline-ad">
-      <div class="ad-unit">
-        <iframe data-aa='2392777' src='//acceptable.a-ads.com/2392777'></iframe>
-        <span class="ad-label">Publicidad</span>
-      </div>
+    <div id="frame">
+      <iframe data-aa='2392777' src='//acceptable.a-ads.com/2392777'></iframe>
+      <a id="frame-link" href="https://aads.com/campaigns/new/?source_id=2392777&source_type=ad_unit&partner=2392777">Advertise here</a>
     </div>
 
     <h1>Bienvenido a Minecraft Free</h1>
@@ -149,19 +154,17 @@
     </div>
 
     <!-- Anuncio integrado ABAJO del contenido -->
-    <div class="inline-ad">
-      <div class="ad-unit">
-        <iframe data-aa='2392778' src='//acceptable.a-ads.com/2392778'></iframe>
-        <span class="ad-label">Publicidad</span>
-      </div>
+    <div id="frame">
+      <iframe data-aa='2392778' src='//acceptable.a-ads.com/2392778'></iframe>
+      <a id="frame-link" href="https://aads.com/campaigns/new/?source_id=2392778&source_type=ad_unit&partner=2392778">Advertise here</a>
     </div>
   </div>
 
   <!-- Anuncio flotante ABAJO (fixed) -->
   <div class="floating-ad bottom">
-    <div class="ad-unit">
+    <div id="frame">
       <iframe data-aa='2392779' src='//acceptable.a-ads.com/2392779'></iframe>
-      <span class="ad-label">Publicidad</span>
+      <a id="frame-link" href="https://aads.com/campaigns/new/?source_id=2392779&source_type=ad_unit&partner=2392779">Advertise here</a>
     </div>
   </div>
 </body>
