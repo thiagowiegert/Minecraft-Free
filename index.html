@@ -3,169 +3,290 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Minecraft Free</title>
+  <title>Minecraft Free | Descargas</title>
   <style>
-    body {
+    :root {
+      --primary: #2e7d32;
+      --primary-dark: #1b5e20;
+      --secondary: #0288d1;
+      --dark: #121212;
+      --light: #f5f5f5;
+      --whatsapp: #25D366;
+      --whatsapp-dark: #128C7E;
+      --ad-bg: rgba(30, 30, 30, 0.9);
+    }
+    
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: url('https://raw.githubusercontent.com/thiagowiegert/Minecraft-Free/refs/heads/main/releases/minecraft.jpg') no-repeat center center fixed;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+                  url('https://raw.githubusercontent.com/thiagowiegert/Minecraft-Free/refs/heads/main/releases/minecraft.jpg') no-repeat center center fixed;
       background-size: cover;
-      color: white;
+      color: var(--light);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Anuncios laterales - solo desktop */
+    .ad-sidebar {
+      display: none;
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 160px;
+      background: var(--ad-bg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 10px;
+      z-index: 100;
+    }
+    
+    .ad-left {
+      left: 10px;
+    }
+    
+    .ad-right {
+      right: 10px;
+    }
+    
+    .ad-container {
+      width: 100%;
+      min-height: 600px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      text-align: center;
-      padding: 20px;
-      box-sizing: border-box;
-      position: relative;
+    }
+
+    /* Anuncios horizontales */
+    .ad-horizontal {
+      width: 100%;
+      background: var(--ad-bg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 10px;
+      margin: 15px 0;
+    }
+    
+    .ad-horizontal .ad-container {
+      min-height: 90px;
     }
 
     .content {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
-      max-width: 700px;
+      background-color: rgba(18, 18, 18, 0.9);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
       width: 100%;
-      margin: 20px 0;
-      z-index: 1;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      order: 2;
     }
 
     h1 {
-      font-size: 3em;
-      text-shadow: 2px 2px 8px #000;
-      margin-bottom: 20px;
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      color: #4caf50;
+      text-align: center;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     }
 
-    p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
+    .subtitle {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+      text-align: center;
     }
 
     .button-container {
       display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     .btn {
-      background-color: #4caf50;
-      padding: 15px 30px;
+      background-color: var(--primary);
+      padding: 0.8rem;
       color: white;
-      font-size: 1.2em;
+      font-size: 1rem;
+      font-weight: 500;
       text-decoration: none;
       border-radius: 8px;
-      transition: background 0.3s;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
 
     .btn:hover {
-      background-color: #45a049;
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
     }
 
-    /* Anuncios flotantes (fixed) */
-    .floating-ad {
-      position: fixed;
-      left: 0;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
+    /* Sección WhatsApp */
+    .whatsapp-section {
+      margin-top: 1.5rem;
+      padding: 1.2rem;
+      background: rgba(37, 211, 102, 0.1);
+      border-radius: 10px;
+      border: 1px solid rgba(37, 211, 102, 0.3);
+    }
+    
+    .whatsapp-section p {
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      opacity: 0.9;
       text-align: center;
-      padding: 10px 0;
-      z-index: 1000;
-    }
-
-    .floating-ad.top {
-      top: 0;
-      border-bottom: 1px solid #4caf50;
-    }
-
-    .floating-ad.bottom {
-      bottom: 0;
-      border-top: 1px solid #4caf50;
-    }
-
-    /* Estilos para los anuncios */
-    #frame {
-      width: 100%;
-      max-width: 728px;
-      height: 90px;
-      margin: 0 auto;
     }
     
-    #frame iframe {
-      border: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      background-color: transparent;
+    .btn-whatsapp {
+      background-color: var(--whatsapp);
     }
     
-    #frame-link {
-      display: block;
-      text-align: right;
-      font-size: 12px;
-      color: #4caf50;
-      text-decoration: none;
-      margin-top: 5px;
-    }
-    
-    #frame-link:hover {
-      text-decoration: underline;
+    .btn-whatsapp:hover {
+      background-color: var(--whatsapp-dark);
     }
 
-    @media (max-width: 768px) {
+    footer {
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      opacity: 0.7;
+      text-align: center;
+      order: 3;
+    }
+
+    /* Estilos para desktop */
+    @media (min-width: 768px) {
+      .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+      }
+      
+      .ad-sidebar {
+        display: block;
+      }
+      
       .content {
-        padding: 20px;
+        max-width: 600px;
+        order: 1;
       }
+      
       h1 {
-        font-size: 2em;
+        font-size: 2.2rem;
       }
-      #frame {
-        height: 60px;
+      
+      .button-container {
+        flex-direction: row;
+      }
+      
+      .btn {
+        padding: 0.8rem 1.5rem;
+      }
+      
+      .ad-horizontal {
+        order: 3;
+        width: 100%;
+        max-width: 728px;
+        margin: 20px auto;
+      }
+      
+      .ad-horizontal .ad-container {
+        min-height: 90px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .content {
+        padding: 2.5rem;
       }
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <!-- 1. Anuncio flotante ARRIBA -->
-  <div class="floating-ad top">
-    <div id="frame">
-      <iframe data-aa='2392902' src='//acceptable.a-ads.com/2392902' style='border:0px; padding:0; width:100%; height:100%; overflow:hidden; background-color: transparent;'></iframe>
-      <a style="display: block; text-align: right; font-size: 12px" id="frame-link" href="https://aads.com/campaigns/new/?source_id=2392902&source_type=ad_unit&partner=2392902">Advertise here</a>
+  <!-- Anuncios laterales (solo desktop) -->
+  <div class="ad-sidebar ad-left">
+    <div class="ad-container">
+      <iframe data-aa='2392902' src='//acceptable.a-ads.com/2392902' scrolling="no" style='border:0px; padding:0; width:160px; height:600px; overflow:hidden; background-color: transparent;'></iframe>
+    </div>
+  </div>
+  
+  <div class="ad-sidebar ad-right">
+    <div class="ad-container">
+      <iframe data-aa='2392902' src='//acceptable.a-ads.com/2392902' scrolling="no" style='border:0px; padding:0; width:160px; height:600px; overflow:hidden; background-color: transparent;'></iframe>
     </div>
   </div>
 
-  <!-- Contenido principal -->
-  <div class="content">
-    <!-- 2. Anuncio integrado ARRIBA -->
-    <div id="frame">
-      <iframe data-aa='2392902' src='//acceptable.a-ads.com/2392902' style='border:0px; padding:0; width:100%; height:100%; overflow:hidden; background-color: transparent;'></iframe>
-      <a style="display: block; text-align: right; font-size: 12px" id="frame-link" href="https://aads.com/campaigns/new/?source_id=2392902&source_type=ad_unit&partner=2392902">Advertise here</a>
+  <div class="container">
+    <!-- Anuncio superior -->
+    <div class="ad-horizontal">
+      <div class="ad-container">
+        <iframe data-aa='2392902' src='//acceptable.a-ads.com/2392902' scrolling="no" style='border:0px; padding:0; width:100%; height:90px; overflow:hidden; background-color: transparent;'></iframe>
+      </div>
     </div>
 
-    <h1>Bienvenido a Minecraft Free</h1>
-    <p>Elige una opción para continuar:</p>
-    <div class="button-container">
-      <a href="https://github.com/thiagowiegert/Minecraft-Free" target="_blank" class="btn">GitHub</a>
-      <a href="https://minecraftfree.vercel.app/releases" class="btn">Releases</a>
+    <!-- Contenido principal -->
+    <div class="content">
+      <h1>Minecraft Free</h1>
+      <p class="subtitle">Descarga las versiones más recientes directamente desde nuestros servidores</p>
+
+      <div class="button-container">
+        <a href="https://github.com/thiagowiegert/Minecraft-Free" target="_blank" class="btn">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="https://minecraftfree.vercel.app/releases" class="btn">
+          <i class="fas fa-cloud-download-alt"></i> Descargas
+        </a>
+      </div>
+
+      <!-- Sección WhatsApp -->
+      <div class="whatsapp-section">
+        <p>¿No sabes cuándo lanzamos nuevas versiones?</p>
+        <a href="https://whatsapp.com/channel/0029Vb5yoLjK0IBmnVo3AL0c" class="btn btn-whatsapp">
+          <i class="fab fa-whatsapp"></i> Únete a nuestro canal
+        </a>
+      </div>
     </div>
 
-    <!-- 3. Anuncio integrado ABAJO -->
-    <div id="frame">
-      <iframe data-aa='2392902' src='//acceptable.a-ads.com/2392902' style='border:0px; padding:0; width:100%; height:100%; overflow:hidden; background-color: transparent;'></iframe>
-      <a style="display: block; text-align: right; font-size: 12px" id="frame-link" href="https://aads.com/campaigns/new/?source_id=2392902&source_type=ad_unit&partner=2392902">Advertise here</a>
+    <!-- Anuncio inferior -->
+    <div class="ad-horizontal">
+      <div class="ad-container">
+        <iframe data-aa='2392902' src='//acceptable.a-ads.com/2392902' scrolling="no" style='border:0px; padding:0; width:100%; height:90px; overflow:hidden; background-color: transparent;'></iframe>
+      </div>
     </div>
-  </div>
 
-  <!-- 4. Anuncio flotante ABAJO -->
-  <div class="floating-ad bottom">
-    <div id="frame">
-      <iframe data-aa='2392902' src='//acceptable.a-ads.com/2392902' style='border:0px; padding:0; width:100%; height:100%; overflow:hidden; background-color: transparent;'></iframe>
-      <a style="display: block; text-align: right; font-size: 12px" id="frame-link" href="https://aads.com/campaigns/new/?source_id=2392902&source_type=ad_unit&partner=2392902">Advertise here</a>
-    </div>
+    <footer>
+      Minecraft es una marca registrada de Mojang Studios. Este sitio no está afiliado con Mojang/Microsoft.
+    </footer>
   </div>
 </body>
 </html>
