@@ -13,9 +13,8 @@
       --light: #f5f5f5;
       --whatsapp: #25D366;
       --whatsapp-dark: #128C7E;
-      --ad-bg: rgba(30, 30, 30, 0.9);
     }
-    
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -24,8 +23,8 @@
 
     body {
       font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-      background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
-                  url('https://raw.githubusercontent.com/thiagowiegert/Minecraft-Free/refs/heads/main/releases/minecraft.jpg') no-repeat center center fixed;
+      background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+        url('https://raw.githubusercontent.com/thiagowiegert/Minecraft-Free/refs/heads/main/releases/minecraft.jpg') no-repeat center center fixed;
       background-size: cover;
       color: var(--light);
       min-height: 100vh;
@@ -42,37 +41,7 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
-    }
-    
-    .ad-left {
-      left: 10px;
-    }
-    
-    .ad-right {
-      right: 10px;
-    }
-    
-    .ad-container {
-      width: 100%;
-      min-height: 600px;
-      display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
-    }
-
-    /* Anuncios horizontales */
-    .ad-horizontal {
-      width: 100%;
-      background: var(--ad-bg);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
-      padding: 10px;
-      margin: 15px 0;
-    }
-    
-    .ad-horizontal .ad-container {
-      min-height: 90px;
     }
 
     .content {
@@ -81,13 +50,14 @@
       border-radius: 12px;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
       width: 100%;
+      max-width: 700px;
       backdrop-filter: blur(8px);
       border: 1px solid rgba(255, 255, 255, 0.1);
       order: 2;
     }
 
     h1 {
-      font-size: 1.8rem;
+      font-size: 2.2rem;
       font-weight: 600;
       margin-bottom: 1.2rem;
       color: #4caf50;
@@ -110,7 +80,7 @@
     }
 
     .boton {
-        color: lime;
+      color: lime;
     }
 
     .btn {
@@ -136,7 +106,6 @@
       box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
     }
 
-    /* Sección WhatsApp */
     .whatsapp-section {
       margin-top: 1.5rem;
       padding: 1.2rem;
@@ -144,18 +113,18 @@
       border-radius: 10px;
       border: 1px solid rgba(37, 211, 102, 0.3);
     }
-    
+
     .whatsapp-section p {
       margin-bottom: 1rem;
       font-size: 0.95rem;
       opacity: 0.9;
       text-align: center;
     }
-    
+
     .btn-whatsapp {
       background-color: var(--whatsapp);
     }
-    
+
     .btn-whatsapp:hover {
       background-color: var(--whatsapp-dark);
     }
@@ -168,53 +137,20 @@
       order: 3;
     }
 
-    /* Estilos para desktop */
     @media (min-width: 768px) {
-      .container {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: flex-start;
-      }
-      
-      .ad-sidebar {
-        display: block;
-      }
-      
-      .content {
-        max-width: 600px;
-        order: 1;
-      }
-      
-      h1 {
-        font-size: 2.2rem;
-      }
-      
       .button-container {
         flex-direction: row;
+        justify-content: center;
       }
-      
+
       .btn {
         padding: 0.8rem 1.5rem;
       }
-      
-      .ad-horizontal {
-        order: 3;
-        width: 100%;
-        max-width: 728px;
-        margin: 20px auto;
-      }
-      
-      .ad-horizontal .ad-container {
-        min-height: 90px;
-      }
-    }
 
-    @media (min-width: 992px) {
       h1 {
         font-size: 2.5rem;
       }
-      
+
       .content {
         padding: 2.5rem;
       }
@@ -223,10 +159,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  
-
   <div class="container">
-
     <!-- Contenido principal -->
     <div class="content">
       <h1>Minecraft Free</h1>
@@ -251,10 +184,8 @@
     </div>
 
     <footer>
-        Copyright © 2025 Minecraft Free. All rights reserved.
-Powered by 
-<a href="https://vercel.com" class="boton">Vercel</a> | 
-<a href="https://github.com" class="boton">GitHub</a>
+      Copyright © 2025 Minecraft Free. All rights reserved.
+      Powered by <a href="https://vercel.com" class="boton">Vercel</a> | <a href="https://github.com" class="boton">GitHub</a>
     </footer>
 
     <footer>
