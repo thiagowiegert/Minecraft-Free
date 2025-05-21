@@ -4,9 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Página Principal | Minecraft Free</title>
-  
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5970409272310128"
-     crossorigin="anonymous"></script>
 
   <style>
     :root {
@@ -29,10 +26,11 @@
       background-size: cover;
       color: white;
       min-height: 100vh;
-      padding: 20px;
+      padding: 20px; /* Proporciona espacio alrededor del contenedor principal */
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center; /* Centra el contenido verticalmente si es menos que 100vh */
     }
 
     .container {
@@ -40,14 +38,16 @@
       max-width: 1200px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 20px; /* Espacio entre .content y el footer consolidado */
+      margin: auto; /* Asegura centrado horizontal si el body no fuera flex-center */
     }
 
-    .content, .whatsapp-section {
+    .content, .whatsapp-section { /* Aplicamos el mismo estilo base a .whatsapp-section */
       background: rgba(255,255,255,0.05);
-      padding: 1rem;
+      padding: 1.5rem; /* Incrementado un poco para más aire */
       border-radius: 16px;
       backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px); /* Para compatibilidad con Safari */
       border: 1px solid rgba(255,255,255,0.1);
       animation: fadeInUp 1s ease both;
     }
@@ -58,7 +58,7 @@
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: 2rem; /* Ajustado para móvil primero */
       text-align: center;
       color: var(--primary);
       text-shadow: 0 2px 5px rgba(0,0,0,0.6);
@@ -69,6 +69,7 @@
       text-align: center;
       margin-bottom: 1.5rem;
       opacity: 0.9;
+      font-size: 1.1rem; /* Ligeramente más grande */
     }
 
     .button-container {
@@ -76,6 +77,7 @@
       flex-direction: column;
       gap: 1rem;
       align-items: center;
+      margin-bottom: 1.5rem; /* Espacio antes de la sección de WhatsApp */
     }
 
     .btn {
@@ -85,11 +87,15 @@
       padding: 0.9rem 1.5rem;
       border-radius: 12px;
       font-weight: bold;
-      display: flex;
+      display: flex; /* Mantenido flex para alinear ícono y texto */
       align-items: center;
+      justify-content: center; /* Centra el contenido del botón */
       gap: 10px;
-      transition: 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.3s ease; /* Especificar propiedades a transicionar */
       box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+      width: 100%; /* Botones ocupan el ancho en móvil por defecto */
+      max-width: 280px; /* Limita el ancho máximo en móvil */
+      text-align: center;
     }
 
     .btn:hover {
@@ -105,75 +111,105 @@
       background-color: var(--whatsapp-dark);
     }
 
-    footer {
+    .whatsapp-section {
+      text-align: center; /* Centra el texto y el botón dentro de esta sección */
+      padding: 1.5rem; /* Mismo padding que .content */
+    }
+
+    .whatsapp-section p {
+      margin-bottom: 1rem; /* Espacio entre el texto y el botón */
+      opacity: 0.9;
+    }
+
+    .main-footer {
       text-align: center;
       font-size: 0.85rem;
-      margin-top: 2rem;
+      margin-top: 2rem; /* Ajustado, el gap del .container también ayuda */
       opacity: 0.75;
+      padding: 1rem;
+      background: rgba(0,0,0,0.2); /* Fondo sutil para el footer */
+      border-radius: 8px; /* Bordes redondeados para el footer */
+      width: 100%; /* Asegura que ocupe el ancho del .container */
     }
 
-    .boton {
+    .main-footer p { /* Estilo para párrafos dentro del footer */
+        margin-bottom: 0.5rem;
+    }
+    .main-footer p:last-child {
+        margin-bottom: 0;
+    }
+
+    .main-footer .boton { /* .boton ahora es específico para .main-footer a */
       color: lime;
       text-decoration: none;
+      font-weight: bold; /* Añadido para destacar */
+    }
+    .main-footer .boton:hover {
+        text-decoration: underline;
     }
 
+    .page-version { /* Clase específica para la versión de la página */
+        margin-top: 1rem;
+        font-size: 0.8rem;
+        opacity: 0.6;
+    }
+
+    /* Media Query para pantallas más grandes */
     @media (min-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
+      }
+
       .button-container {
         flex-direction: row;
         justify-content: center;
       }
 
       .btn {
-        width: auto;
-      }
-
-      h1 {
-        font-size: 2.5rem;
+        width: auto; /* Permite que el botón se ajuste a su contenido */
+        min-width: 200px; /* Ancho mínimo para mejor apariencia */
       }
     }
   </style>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
   <div class="container">
-    <div class="content">
-      <h1>Minecraft Free</h1>
+    <main class="content"> <h1>Minecraft Free</h1>
       <p class="subtitle">Descarga las versiones más recientes directamente desde nuestros servidores</p>
 
       <div class="button-container">
-        <a href="https://github.com/thiagowiegert/Minecraft-Free" target="_blank" class="btn">
+        <a href="https://github.com/thiagowiegert/Minecraft-Free" target="_blank" rel="noopener noreferrer" class="btn">
           <i class="fab fa-github"></i> GitHub
         </a>
-        <a href="releases/" class="btn">
-          <i class="fas fa-cloud-download-alt"></i> Descargas
+        <a href="releases" class="btn"> <i class="fas fa-cloud-download-alt"></i> Descargas
         </a>
       </div>
     
-      <footer "Para arreg">
-          
-      </footer>
-
       <div class="whatsapp-section">
         <p>¿No sabes cuándo lanzamos nuevas versiones?</p>
-        <a href="https://whatsapp.com/channel/0029Vb5yoLjK0IBmnVo3AL0c" class="btn btn-whatsapp">
+        <a href="https://whatsapp.com/channel/0029Vb5yoLjK0IBmnVo3AL0c" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
           <i class="fab fa-whatsapp"></i> Únete a nuestro canal
         </a>
       </div>
-    </div>
-
-    <footer>
-      Copyright © 2025 <a href="https://minecraftfree.vercel.app" class="boton">Minecraft Free.</a> All rights reserved.
-      Powered by <a href="https://vercel.com" class="boton">Vercel</a> |
-      <a href="https://github.com" class="boton">GitHub</a>
+    </main> <footer class="main-footer"> <p>
+        Copyright © 2025 <a href="https://minecraftfree.vercel.app" target="_blank" rel="noopener noreferrer" class="boton">Minecraft Free.</a> Todos los derechos reservados.
+      </p>
+      <p>
+        Powered by <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" class="boton">Vercel</a> |
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="boton">GitHub</a>
+      </p>
+      <p>
+        Minecraft es una marca registrada de Mojang Studios. Este sitio no está afiliado con Mojang/Microsoft.
+      </p>
+      <p class="page-version">Página Principal Versión: 1.4</p>
     </footer>
-
-    <footer>
-      Minecraft es una marca registrada de Mojang Studios. Este sitio no está afiliado con Mojang/Microsoft.
-    </footer>
-
-    <h3>Página Principal Versión: 1.4</h3>
   </div>
 
 </body>
