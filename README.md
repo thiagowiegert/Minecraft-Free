@@ -1,3 +1,3 @@
 # GitHub oficial de Minecraft Free
 
-Versión del repositorio: 3.2
+Versión del repositorio: 3.3
